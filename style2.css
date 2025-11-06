@@ -1,0 +1,160 @@
+:root {
+  --sky-blue: #74b9ff;
+  --cloud-white: #ffffff;
+  --toy-yellow: #FFD700;
+  --toy-blue: #1E88E5;
+  --dark-text: #2c2c2c;
+  --soft-shadow: rgba(0, 0, 0, 0.15);
+}
+
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(to bottom, #a0d9ff, #74b9ff 70%, #fff 100%);
+  color: var(--dark-text);
+  overflow-x: hidden;
+}
+
+header {
+  text-align: center;
+  padding: 60px 20px;
+  position: relative;
+  z-index: 2;
+}
+
+header h1 {
+  font-family: 'Luckiest Guy', cursive;
+  font-size: 3.8em;
+  color: var(--toy-yellow);
+  text-shadow:
+    0 0 6px var(--toy-blue),
+    0 0 12px var(--toy-blue),
+    0 0 20px var(--toy-yellow);
+  letter-spacing: 3px;
+  animation: cleanGlow 2.5s infinite alternate ease-in-out;
+}
+
+@keyframes cleanGlow {
+  from {
+    text-shadow:
+      0 0 8px var(--toy-blue),
+      0 0 16px var(--toy-yellow);
+  }
+  to {
+    text-shadow:
+      0 0 12px var(--toy-blue),
+      0 0 22px var(--toy-yellow);
+  }
+}
+
+header::before {
+  content: "";
+  position: absolute;
+  top: -30px;
+  left: 0;
+  width: 100%;
+  height: 150%;
+  background: url('https://i.ibb.co/Thh5wcn/cloud.png') repeat-x;
+  background-size: 200px;
+  opacity: 0.15;
+  animation: clouds 50s linear infinite;
+  z-index: -1;
+}
+
+@keyframes clouds {
+  from { background-position: 0 0; }
+  to { background-position: -1000px 0; }
+}
+
+main {
+  max-width: 900px;
+  margin: 60px auto;
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 25px;
+  padding: 40px 50px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  backdrop-filter: blur(5px);
+}
+
+/* 🧩 Section */
+section {
+  margin-bottom: 60px;
+  padding-bottom: 25px;
+  border-bottom: 4px dashed var(--toy-yellow);
+}
+
+section h2 {
+  color: var(--toy-blue);
+  font-size: 1.8em;
+  font-weight: 800;
+  letter-spacing: 1px;
+  position: relative;
+}
+
+section h2::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 60px;
+  height: 4px;
+  background-color: var(--toy-yellow);
+  border-radius: 2px;
+}
+
+/* ✨ Isi teks */
+section p, section ul {
+  font-size: 1.1em;
+  margin-top: 15px;
+  line-height: 1.8;
+  color: var(--dark-text);
+}
+
+ul {
+  list-style-type: "⭐ ";
+  padding-left: 20px;
+}
+
+section:hover {
+  transform: translateY(-4px);
+  transition: transform 0.3s ease;
+}
+
+footer {
+  text-align: center;
+  background: linear-gradient(to right, var(--toy-blue), var(--toy-yellow));
+  color: var(--cloud-white);
+  font-weight: bold;
+  padding: 20px 0;
+  letter-spacing: 1px;
+  text-shadow: 0 0 5px var(--toy-blue);
+}
+
+.btn {
+  display: inline-block;
+  background-color: #e53935; 
+  color: #ffeb3b; 
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 12px 30px;
+  border-radius: 30px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease;
+  font-size: 1.1rem;
+}
+
+.btn:hover {
+  background-color: #ff1744; 
+  color: #ffffff; 
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(255, 23, 68, 0.4);
+}
+
+.btn:active {
+  transform: translateY(2px);
+  background-color: #c62828;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.3);
+}
